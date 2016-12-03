@@ -66,5 +66,9 @@ namespace ATM.Observers
             return _moneyHave - _moneySpent;
         }
 
+        public void refund() {
+            MoneySpent = 0;
+        }
+
     }
 }

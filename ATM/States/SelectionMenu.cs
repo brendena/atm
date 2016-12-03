@@ -31,7 +31,12 @@ namespace ATM.States
             CurrentMoney coffeeSelectionInterface = new CurrentMoney(100, 0);
             coffeeSelectionInterface.Attach(new ListOptions(this, 100, 100));
             coffeeSelectionInterface.Attach(new MoneyInsertObserver(this, coffeeSelectionInterface, 500, 0));
+            coffeeSelectionInterface.Attach(new DisplayCurrentMoney(this, 800, 100));
+            coffeeSelectionInterface.Attach(new ReffundUI(this, coffeeSelectionInterface, 200, 600));
+            coffeeSelectionInterface.Attach(new CreditCardUi(this, 800, 500));
             coffeeSelectionInterface.Notify();
+
+
             
 
 

@@ -18,7 +18,7 @@ namespace ATM.States
         protected Control ui;
         protected StateManager _stateManager;
         static public string _topURLDomain = "../../";
-        static public string pictureURL = _topURLDomain + "pictures/";
+        static private string pictureURL = _topURLDomain + "pictures/";
         static public int width = Screen.PrimaryScreen.Bounds.Width;
         static public int height = Screen.PrimaryScreen.Bounds.Height;
 
@@ -56,6 +56,9 @@ namespace ATM.States
         {
             get { return _topURLDomain; }
         }
-
+        public string PictureURL
+        {
+            get { return pictureURL; }
+        }
     }
 }

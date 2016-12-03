@@ -22,7 +22,7 @@ namespace ATM.States
         public IntroState(Control ui, StateManager stateManager) : base(ui, stateManager)
         {
             PictureBox brendenSouthPark = new PictureBox();
-            brendenSouthPark.Image = Image.FromFile(pictureURL + "brendenSP.png");
+            brendenSouthPark.Image = Image.FromFile(this.PictureURL + "brendenSP.png");
             UiInitHelperConstructor(brendenSouthPark, "brenden South park",
                         new System.Drawing.Point(0, 0),
                         new System.Drawing.Size(500, 500));
