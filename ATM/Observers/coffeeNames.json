@@ -1,0 +1,32 @@
+﻿{
+  "AmericanNames": [
+    {
+      "Name": "coffee coffee",
+      "Price": "3"
+    },
+    {
+      "Name": "SHARPY DARK COFFEE",
+      "Price": "10"
+    },
+    {
+      "Name": "SHITTY SHIT COFFEE",
+      "Price": "20"
+    },
+  ],
+
+  "BritishNames": [
+    {
+       "Name": "Affogato",
+      "Price": "3"
+    },
+    {
+      "Name": "Americano",
+      "Price": "10"
+    },
+    {
+      "Name": "Bicerin",
+      "price": "20"
+    }
+  ]
+
+}
