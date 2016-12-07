@@ -23,22 +23,20 @@ that the assessor of this assignment may, for the purpose of assessing this assi
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace ATM
+namespace ATM.Decorator
 {
-    static class Program
+    class Water : CoffeeDecorator
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Add the water to the decorator pattern.
         /// </summary>
-        [STAThread]
-        static void Main()
+        public override int brew()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            int startingPosition = base.brew();
+            return createImage("Water.png", startingPosition);
         }
     }
 }

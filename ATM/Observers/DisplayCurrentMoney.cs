@@ -40,7 +40,7 @@ namespace ATM.Observers
 
                 if (labelsText == _listDisplayCurrentMoney[0])
                 {
-                    label.Text = labelsText + currentMoney.MoneyHave;
+                    label.Text = labelsText + currentMoney.MoneyTotal;
                 }
                 else if (labelsText == _listDisplayCurrentMoney[1])
                 {

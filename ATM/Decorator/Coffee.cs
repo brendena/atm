@@ -20,25 +20,40 @@ that the assessor of this assignment may, for the purpose of assessing this assi
         copy of this assignment on its database for the purpose of future plagiarism checking)
 
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace ATM
+namespace ATM.Decorator
 {
-    static class Program
+    abstract class Coffee
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Coffee hold the Brew Function that all things that 
+        /// want to use the Coffee's decorator pattern have to use.
+        /// 
         /// </summary>
-        [STAThread]
-        static void Main()
+        static protected string _imageLocation = "../../pictures/";
+        static protected string _imageLocationTmp = "../../pictures/tmp.png";
+        static protected string _imageLocationTmp2 = "../../pictures/tmp2.png";
+        public abstract int brew(  );
+
+        public string ImageLocation
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            get { return _imageLocation; }
+
+        }
+        public string ImageLocationTmp
+        {
+            get { return _imageLocationTmp; }
+        }
+
+        public string ImageLocationTmp2
+        {
+            get { return _imageLocationTmp2; }
         }
     }
 }

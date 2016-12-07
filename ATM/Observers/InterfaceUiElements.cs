@@ -21,6 +21,7 @@ that the assessor of this assignment may, for the purpose of assessing this assi
 
 */
 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,44 +32,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ATM.States;
-using ATM.Observers;
 
 
-namespace ATM.States
+namespace ATM.Observers
 {
-    class SelectionMenu : State
+    abstract class InterfaceUiElements : Observer
     {
-
         /// <summary>
-        /// Selection Menu is all the ui to allow people to insert coins
-        /// and select there item.
+        ///  This is the interface for all Observer Iterface elements
+        ///  Each specific Interface has it own deticated List view that they can change and edit
+        ///  Every UI iterface need to be position by the main state
         /// </summary>
-        private Control _ui;
-        private StateManager _stateManager;
-        ~SelectionMenu()
-        {
-            Console.WriteLine("SelectionMenu destroyed \n");
+        protected List<Control> _uiItems = new List<Control>();
+        protected State _currentState;
+        protected int _x;
+        protected int _y;
+
+        public InterfaceUiElements(State currentState, int x, int y) {
+            _currentState = currentState;
+            _x = x;
+            _y = y;
         }
 
 
         /*      Pre:  NONE *     
          *      Post:  NONE*  
-         *      Purpose:  Set up all the differnt interfaces and 
-         *      connects them to CurrentMoney Observer
+         *      Purpose: Should never be called because its a virtual function
+         *      in a abstract class but just in case, but needs to be defined
+         *      because of its inheritense.
          *      *********************************************************/
-        public SelectionMenu(StateManager stateManager) :   base(stateManager)
-        {
-            _ui = ui;
-            _stateManager = stateManager;
-
-
-            CurrentMoney currentMoneyUpdater = new CurrentMoney(100, 0);
-            currentMoneyUpdater.Attach(new ListOptions(this, stateManager, 100, 100));
-            currentMoneyUpdater.Attach(new MoneyInsertObserver(this, currentMoneyUpdater, 500, 0));
-            currentMoneyUpdater.Attach(new DisplayCurrentMoney(this, 800, 100));
-            currentMoneyUpdater.Attach(new ReffundUI(this, currentMoneyUpdater, 200, 600));
-            currentMoneyUpdater.Attach(new CreditCardUi(this, 800, 500));
-            currentMoneyUpdater.Notify();
+        public virtual void Update(CurrentMoney currentMoney) {
+            Console.WriteLine("base Class");
         }
 
 

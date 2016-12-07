@@ -19,7 +19,7 @@ namespace ATM.States
         {
             Console.WriteLine("coinState destroyed \n");
         }
-        public IntroState(Control ui, StateManager stateManager) : base(ui, stateManager)
+        public IntroState(StateManager stateManager) : base(stateManager)
         {
             PictureBox brendenSouthPark = new PictureBox();
             brendenSouthPark.Image = Image.FromFile(this.PictureURL + "brendenSP.png");
@@ -43,7 +43,7 @@ namespace ATM.States
         {
 
             this.cleanUiElements();
-            this._stateManager.state = new SelectionMenu(this.ui, this._stateManager);
+            this._stateManager.state = new SelectionMenu(this._stateManager);
         }
 
     }
